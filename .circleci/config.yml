@@ -9,7 +9,7 @@ jobs:
       - run: npm install
   test:
     docker:
-      - image: circleci/node:8.91 #creates an image to run my tests
+      - image: circleci/node:8.9 #creates an image to run my tests
     steps:
       - checkout
       - run: echo "testing"
