@@ -1,10 +1,21 @@
 version: 2
 jobs:
-  build:
+  buildone:
     docker:
       - image: circleci/ruby:2.4.1 #creates an image to run my tests
     steps:
       - checkout
       - run: echo "a first hello"
+  buildtwo:
+    docker:
+      - image: circleci/ruby:2.4.1 #creates an image to run my tests
+    steps:
+      - checkout
+      - run: echo "a second hello"
+  workflows:
+    version: 2
+    jobs:
+      - buildone
+      - buildtwo
 
 
